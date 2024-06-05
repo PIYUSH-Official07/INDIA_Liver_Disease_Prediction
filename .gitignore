@@ -129,6 +129,8 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+.liver/
+liver/
 
 # Spyder project settings
 .spyderproject
