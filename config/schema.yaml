@@ -1,0 +1,42 @@
+columns:
+  - Age: int
+  - Gender: category
+  - Total_Bilirubin: float
+  - Direct_Bilirubin: float
+  - Alkaline_Phosphotase: int
+  - Alamine_Aminotransferase: int
+  - Aspartate_Aminotransferas: int
+  - Total_Protiens: float
+  - Albumin: float
+  - Albumin_and_Globulin_Ratio: float
+  - Dataset: int
+   
+
+numerical_columns:
+  - Age
+  - Alkaline_Phosphotase
+  - Alamine_Aminotransferase
+  - Aspartate_Aminotransferase
+  - Dataset
+
+categorical_columns:
+  - Gender
+
+
+drop_columns:
+  - Albumin_and_Globulin_Ratio
+  - Aspartate_Aminotransferase
+
+# for data transformation
+num_features:
+
+
+
+or_columns:
+
+
+oh_columns:
+
+
+transform_columns:
+  
