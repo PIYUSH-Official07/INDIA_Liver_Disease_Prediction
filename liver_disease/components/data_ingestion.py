@@ -86,6 +86,7 @@ class DataIngestion:
             dataframe = self.export_data_into_feature_store()
 
             logging.info("Got the data from mongodb")
+            dataframe.rename(columns = {'Dataset':'liver_disease_YN'}, inplace =True)
 
             self.split_data_as_train_test(dataframe)
 

@@ -9,7 +9,7 @@ columns:
   - Total_Protiens: float
   - Albumin: float
   - Albumin_and_Globulin_Ratio: float
-  - Dataset: int
+  - liver_disease_YN: int
    
 
 numerical_columns:
@@ -17,7 +17,7 @@ numerical_columns:
   - Alkaline_Phosphotase
   - Alamine_Aminotransferase
   - Aspartate_Aminotransferase
-  - Dataset
+  - liver_disease_YN
 
 categorical_columns:
   - Gender
@@ -29,14 +29,21 @@ drop_columns:
 
 # for data transformation
 num_features:
-
+  - Age
+  - Total_Protiens
+  - Albumin
+  - Total_Bilirubin
+  -  Direct_Bilirubin
+  - Alkaline_Phosphotase
+  - Alamine_Aminotransferase
 
 
 or_columns:
-
-
-oh_columns:
+  - Gender
 
 
 transform_columns:
-  
+  - Total_Bilirubin
+  - Direct_Bilirubin
+  - Alkaline_Phosphotase
+  - Alamine_Aminotransferase
