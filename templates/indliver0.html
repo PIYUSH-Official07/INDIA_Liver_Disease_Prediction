@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>IND Liver Disease Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/style.css')}}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  </head>
+  <body>
+    <nav class="navbar navbar-light bg-light static-top">
+        <div class="container-fluid">
+           <a class="navbar-brand" href="https://ineuron.ai"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIkAAAAlCAMAAABBJDpuAAAAVFBMVEX/fgD/iQA7NzIyMjMnNYInNYEnNYInNYEzMzInNYQnNYETJzsnNYIwN1wxMjNoTis4O1YrNm0xOF47PE9DP0dEQEVpTVkAJJ4nNYEOLJHJbiAzMzOmmmHRAAAAFnRSTlOh/vu+986oen9fP2UqEzQkFAIDAAEEILVBJQAAA3FJREFUWMPNmO2WoyAMQG0VBARtdVRs3/89NwkgaF1rd2aOm18tIrnkgwSz7n+R7LcV1ELkeS7E7VySRlyfQXJhTiO55c+liP4cEuH1X8E7gaV+S3Jv2zYZ/Vr+/Sdx2vP6doc/fSPcf/GOpLSFVXFUW8t+giRP47TOd60yk1hbxIhSP0ACKPWrvw7YBIT/lcQY84G3Wk17ugWQfg5UsQJpjflKSLQi7xTWyk0SXTJ4VnB5D1yccxmp4Z+mX5KGNS+SPXVNll0ulyxL0wYmloBB6zL/MpCoAgjAJiUM6w0SboMwPUdRogvNKcNM3smFdRvEcJJkKcflQa+X0pNIfBGW0zKqjyQtw4VLKQlI7ZLgdrRNSZDjMQx2GB4pCkxkCrfGWUTJ0Egan6muCHgJCUwtnCk0mrJ9Q8K5LUqtdSfynkAedhynaRqngVDaXLiJEAzkFkM71IuIlWRYtSQpbXSZDvQ7JPCei9brs+oaABkn74LRIkpFaVxGnzjvIxTYREOoEwn5r01JTDRTcO87Eu3zNUeTPKZpjrIRrNIDCjzALbPk7LJMIokOEQu2K7yKQAKvFDF9pVe0R+LGb7h1MMkw2ijjA/1zhSfSphvEAChXJEhAqwYStIJWXnTpvbdH4hTUwSQ2JRmQpILDLYbB7J41SYiLcNozu5Z3JMo7RxBJahI7WSRByCMkqJt9hySESbVJcvmARJGFExJmdBSl2oM2+T4JLWfgaGFptizlPUm1FydHSdyZ7UnS4ySph2kS0kJrkvr5NJg7dnrJnfxgxPozRPGtkyPNOxtaiDvbIAF9L+5B5zTI2BwlwXmM+U3zReav3o0F8oUEFFZ42McDZYomOUziFmezgWyo251Uc1nyKJol7URCEvIYUEbHYaEGQi9C9egwCdVfHwiaajfjKMUcHcRacCylhWJbJDfq47EEDhYqoIWjHnwDXZPpPiChPQelLU+Cbm4w50FmYgkvFwpiWwCC/Um/SLcNElOC9RVj6qWpCiEMvRUK4zLpdKmPw8rVldy/qxjn60wLrVLWJIPLiZJRr3fsvnOHPvare+lB93tb37T20D82jqOt+zNuXhuNvNhp7X+PpHb3rvV9R5xjE2SpyCN9ffQO+GtWIZr5Xnytz4gTMIRYfys47/uJEXny/aQ/95tSUwmU+uRvSp/IHzQqZYpYrQmxAAAAAElFTkSuQmCC" /></a>
+        </div>
+     </nav>
+    <section>
+        <div class="container-fluid">
+            <div class="container">
+                <form action="/" method="post">
+                    <legend>IND Liver Disease Diagnostic test Form</legend>
+                    
+                    <div class="mb-3">
+                      <label for="company_age">Age of the patient</label>
+                      <input type="number" class="form-control" id="company_age" name="company_age" placeholder="age" required="required">
+                    </div>
+            
+                    <div class="mb-3">
+                      <label for="gender">Gender</label>
+                      <select class="form-control" id="gender" name="gender" placeholder="gender" required="required">
+                          <option>Male</option>
+                          <option>Female</option>
+                      </select>
+                    </div>
+                             
+                      <div class="mb-3">
+                        <label for="total_bilirubin">Total_Bilirubin</label>
+                        <input type="number" class="form-control" id="total_bilirubin" name="total_bilirubin" placeholder="total_bilirubin" required="required">
+                      </div>
+        
+                      <div class="mb-3">
+                        <label for="direct_bilirubin">Direct_Bilirubin</label>
+                        <input type="number" class="form-control" id="direct_bilirubin" name="direct_bilirubin" placeholder="direct_bilirubin" required="required">
+                      </div>
+
+                      <div class="mb-3">
+                        <label for="alkaline_phosphotase">Alkaline_Phosphotase</label>
+                        <input type="number" class="form-control" id="alkaline_phosphotase" name="alkaline_phosphotase" placeholder="alkaline_phosphotase" required="required">
+                      </div>
+                      
+                    <div class="mb-3">
+                      <label for="alamine_aminotransferase">Alamine_Aminotransferase</label>
+                      <input type="number" class="form-control" id="alamine_aminotransferase" name="alamine_aminotransferase" placeholder="alamine_aminotransferase" required="required">
+                    </div>
+
+                    <div class="mb-3">
+                      <label for="aspartate_aminotransferas">Aspartate_Aminotransferas</label>
+                      <input type="number" class="form-control" id="aspartate_aminotransferase" name="aspartate_aminotransferas" placeholder="aspartate_aminotransferas" required="required">
+                    </div>
+
+                    <div class="mb-3">
+                      <label for="total_protiens">Total_Protiens</label>
+                      <input type="number" class="form-control" id="total_protiens" name="total_protiens" placeholder="total_protiens" required="required">
+                    </div>
+      
+                    <div class="mb-3">
+                      <label for="albumin">Albumin</label>
+                      <input type="number" class="form-control" id="albumin" name="albumin" placeholder="albumin" required="required">
+                    </div>
+
+                    <div class="mb-3">
+                      <label for="albumin_and_globulin_ratio">Albumin_and_Globulin_Ratio</label>
+                      <input type="number" class="form-control" id="albumin_and_globulin_ratio" name="albumin_and_globulin_ratio" placeholder="albumin_and_globulin_ratio" required="required">
+                    </div>
+                      <input class="btn btn-primary" type="submit" value="Predict Liver Disease-Status" required />
+                  </div>
+                </form>
+            </div>
+            <div class="text-center text-black">
+                <h2 class="display-4 fw-bolder">IND Liver Disease Prediction Status: {{context}} </h2>
+            </div>
+        </div>
+    </section>
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script type="text/javascript">
+        $(".input").focus(function(){
+            $(this).parent().addClass("focus");
+        }).blur(function(){
+            if($(this).val() === ''){
+                $(this).parent().removeClass("focus");
+            }
+        })
+    </script>
+  </body>
+</html>

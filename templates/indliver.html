@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>IND Liver Disease Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/style.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-light bg-light static-top">
+        <div class="container-fluid">
+        </div>
+     </nav>
+    <section>
+        <div class="container-fluid">
+            <div class="container">
+                <form action="/" method="post">
+                    <legend><b>IND Liver Disease Diagnostic Test Form</b></legend>
+
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="company_age">Age</label>
+                            <input type="number" step="0.1" class="form-control" id="age" name="age" placeholder="age" required="required">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="gender">Gender</label>
+                            <select class="form-control" id="gender" name="gender" placeholder="gender" required="required">
+                                <option>Male</option>
+                                <option>Female</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="total_bilirubin">Total Bilirubin</label>
+                            <input type="number" step="0.01" class="form-control" id="total_bilirubin" name="total_bilirubin" placeholder="total_bilirubin" required="required">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="direct_bilirubin">Direct Bilirubin</label>
+                            <input type="number" step="0.01" class="form-control" id="direct_bilirubin" name="direct_bilirubin" placeholder="direct_bilirubin" required="required">
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="alkaline_phosphotase">Alkaline Phosphotase</label>
+                            <input type="number" step="0.01" class="form-control" id="alkaline_phosphotase" name="alkaline_phosphotase" placeholder="alkaline_phosphotase" required="required">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="alamine_aminotransferase">Alamine Aminotransferase</label>
+                            <input type="number" step="0.01" class="form-control" id="alamine_aminotransferase" name="alamine_aminotransferase" placeholder="alamine_aminotransferase" required="required">
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="aspartate_aminotransferas">Aspartate Aminotransferase</label>
+                            <input type="number" step="0.01" class="form-control" id="aspartate_aminotransferase" name="aspartate_aminotransferas" placeholder="aspartate_aminotransferas" required="required">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="total_protiens">Total Proteins</label>
+                            <input type="number" step="0.01" class="form-control" id="total_protiens" name="total_protiens" placeholder="total_protiens" required="required">
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="albumin">Albumin</label>
+                            <input type="number" step="0.01" class="form-control" id="albumin" name="albumin" placeholder="albumin" required="required">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="albumin_and_globulin_ratio">Albumin and Globulin Ratio</label>
+                            <input type="number" step="0.01" class="form-control" id="albumin_and_globulin_ratio" name="albumin_and_globulin_ratio" placeholder="albumin_and_globulin_ratio" required="required">
+                        </div>
+                    </div>
+
+                    <input class="btn btn-primary" type="submit" value="Predict Liver Disease-Status" />
+                </form>
+            </div>
+            <div class="text-center text-black">
+                <h2 class="display-4 fw-bolder">IND Liver Disease Prediction Status: {{context}} </h2>
+            </div>
+        </div>
+    </section>
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script type="text/javascript">
+        $(".input").focus(function(){
+            $(this).parent().addClass("focus");
+        }).blur(function(){
+            if($(this).val() === ''){
+                $(this).parent().removeClass("focus");
+            }
+        })
+    </script>
+</body>
+</html>
